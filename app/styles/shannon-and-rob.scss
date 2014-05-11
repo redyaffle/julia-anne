@@ -1,0 +1,200 @@
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+.nav-container {
+  text-align: center;
+  background-image: url(/images/patterns/p6.png);
+  width: 100%;
+
+  &.stuck {
+    position: fixed;
+    top: 0px;
+  }
+
+  .nav-inner {
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+
+  ul.nav {
+    padding: 10px 0 2px 0;
+    margin: 0 auto;
+    font-size: 24px;
+    line-height: 24px;
+    width: 780px;
+    background-image: url(/images/patterns/p6.png);
+
+    li {
+      display: inline-block;
+      font-family: "ff-nuvo-web-pro",sans-serif;
+      font-weight: bold;
+
+      a {
+        border-bottom: 5px solid transparent;
+        color: #000;
+        text-transform: uppercase;
+        padding: none;
+      }
+      a.active, a:hover {
+        border-bottom: 5px solid #969293;
+        background-color: rgba(0,0,0,0); /* override bootstrap background */
+      }
+    }
+  }
+}
+
+.hero {
+  max-width: 100%;
+  min-width: 100%;
+  margin-bottom: 2em;
+
+  &.no-bottom { margin-bottom: 0; }
+
+  img {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  /* .crop { */
+    /* overflow:hidden; */
+    /* margin: -10px 0 -100px 0; */
+  /* } */
+
+  &.padding-top { margin-top: 350px; }
+}
+
+.container {
+  min-width: 960px;
+}
+
+.section {
+  clear: both;
+
+  .header {
+    float: left;
+    width: 140px;
+    border-bottom: none;
+    margin-right: 30px;
+
+    font-family: "ff-nuvo-web-pro",sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .body {
+    width: 380px;
+    float: left;
+  }
+  .body-wide {
+    width: 600px;
+    float: left;
+  }
+
+  .day-container {
+    clear: both;
+    margin-bottom: 2em;
+
+    @extend .cf;
+
+    .date {
+      float: left;
+      width: 180px;
+      text-align: right;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .date-info {
+      margin-left: 20px;
+      float: left;
+      font-size: 20px;
+      width: 380px;
+    }
+  }
+
+  .sidebar {
+    width: 380px;
+    float: left;
+  }
+
+  .inner-columns {
+    clear: both;
+    @extend .cf;
+
+    &.push-down {
+      margin-top: 2em;
+    }
+
+    .left-column {
+      float: left;
+      width: 150px;
+
+      &.bold {
+        font-weight: bold;
+      }
+    }
+    .right-column {
+      float: left;
+      width: 450px;
+    }
+  }
+
+  .subheader {
+    font-family: "ff-nuvo-web-pro",sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+
+    &.bold {
+      font-weight: bold;
+    }
+    &.push-down {
+      margin-top: 2em;
+    }
+  }
+}
+
+.things-to-do-section {
+  img.beaches-and-surfing {
+    margin-bottom: 2em;
+  }
+}
+
+.footer {
+  padding: none; /* override defaults */
+  color: inherit; /* override defaults */
+  border-top: none; /* override defaults */
+
+  margin-top: 30px;
+
+  .banner {
+    padding: 5px 0;
+    text-align: center;
+    background-color: #969293;
+
+    font-size: 24px;
+    color: black;
+  }
+}
